@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoxTale Book Shoppe | Woodstock's Community Bookstore Since 2007</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #f8f4ea; color: #2f3e2f; line-height: 1.6; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+    a { text-decoration: none; color: inherit; }
+    img { width: 100%; border-radius: 12px; margin-bottom: 15px; }
+
+    header { background: #ffffff; padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    nav a { margin-left: 20px; font-weight: 500; }
+    nav a:hover { color: #588157; }
+
+    .btn { display: inline-block; padding: 12px 24px; border-radius: 30px; font-weight: 600; transition: 0.3s; margin: 5px; }
+    .btn-primary { background: #3a5a40; color: white; }
+    .btn-primary:hover { background: #588157; }
+    .btn-outline { border: 2px solid #3a5a40; color: #3a5a40; }
+    .btn-outline:hover { background: #3a5a40; color: white; }
+
+    .hero { background: #e9edc9; padding: 100px 8%; text-align: center; }
+    .hero h2 { font-size: 3rem; margin-bottom: 20px; }
+    .hero p { max-width: 600px; margin: auto; margin-bottom: 30px; }
+
+    section { padding: 80px 8%; }
+    .container { max-width: 1100px; margin: auto; }
+
+    .grid { display: grid; gap: 30px; }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+    .card { background: white; padding: 20px; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: 0.3s; }
+    .card:hover { transform: translateY(-5px); }
+
+    .membership { background: #e9edc9; text-align: center; }
+
+    footer { background: #3a5a40; color: white; text-align: center; padding: 40px 20px; }
+
+    input[type="text"] { padding: 10px; border-radius: 8px; border: 1px solid #ccc; width: 250px; }
+
+    @media (max-width: 768px) {
+      .hero h2 { font-size: 2rem; }
+      header { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>FoxTale Book Shoppe</h1>
+  <nav>
+    <a href="#store">Shop</a>
+    <a href="#membership">Membership</a>
+    <a href="#events">Events</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <img src="foxtale-hero.jpg" alt="FoxTale Book Shoppe Image" style="max-width:600px; width:100%; margin-bottom:30px; border-radius:16px;">
+  <h2>Woodstock’s Community Bookstore Since 2007</h2>
+  <p>Discover stories, connect with local authors, and support your neighborhood independent bookstore.</p>
+  <a href="#store" class="btn btn-primary">Shop Books</a>
+  <a href="#membership" class="btn btn-outline">Join Membership</a>
+  <a href="#events" class="btn btn-outline">View Events</a>
+</section>
+
+<section>
+  <div class="container" style="text-align:center;">
+    <h3>Why Shop Local?</h3>
+    <p>Every purchase supports local jobs, authors, and community events. Shopping independent keeps Woodstock unique and strengthens meaningful connections.</p>
+  </div>
+</section>
+
+<section id="store" style="background:white;">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; align-items:center; margin-bottom:40px;">
+      <h3>Online Store</h3>
+      <input type="text" placeholder="Search books...">
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794" alt="Bestseller Book">
+        <h4>Bestsellers</h4>
+        <p>Browse our most popular titles.</p>
+        <a href="#" class="btn btn-primary">View Collection</a>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Local Author Books">
+        <h4>Local Authors</h4>
+        <p>Support writers from our community.</p>
+        <a href="#" class="btn btn-primary">View Collection</a>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d" alt="Signed Books">
+        <h4>Signed Copies</h4>
+        <p>Exclusive signed and limited editions.</p>
+        <a href="#" class="btn btn-primary">View Collection</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="membership" class="membership">
+  <div class="container">
+    <h3>Become a Member</h3>
+    <p>• Monthly discounts<br>• Early access to new releases<br>• Exclusive signed books<br>• Special event perks</p>
+    <br>
+    <a href="#" class="btn btn-primary">Join Now</a>
+  </div>
+</section>
+
+<section id="events" style="background:white;">
+  <div class="container">
+    <h3 style="text-align:center; margin-bottom:40px;">Upcoming Events</h3>
+    <div class="grid grid-3">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c" alt="Author Signing">
+        <h4>Author Signing Night</h4>
+        <p>Meet featured authors and get books signed.</p>
+        <a href="#" class="btn btn-outline">RSVP</a>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353" alt="Book Club">
+        <h4>Local Book Club Meetup</h4>
+        <p>Discuss monthly picks with fellow readers.</p>
+        <a href="#" class="btn btn-outline">RSVP</a>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Storytime">
+        <h4>Children’s Storytime</h4>
+        <p>Fun weekly reading for kids.</p>
+        <a href="#" class="btn btn-outline">RSVP</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="membership">
+  <div class="container" style="text-align:center;">
+    <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da" alt="Bookstore Interior">
+    <h3>Our Story</h3>
+    <p>Founded in 2007, FoxTale Book Shoppe has been a gathering place for readers and writers in Woodstock, Georgia. As we grow online, our mission remains to foster meaningful connections and support our community.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 FoxTale Book Shoppe • Woodstock, Georgia</p>
+  <p>Shop local. Read local. Support community.</p>
+</footer>
+
+</body>
+</html>
