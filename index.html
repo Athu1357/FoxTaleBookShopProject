@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FoxTale Book Shoppe | Woodstock's Community Bookstore Since 2007</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f8f4ea;
+  --text: #2f3e2f;
+  --accent: #3a5a40;
+  --accent-light: #588157;
+  --card: #ffffff;
+}
+
+body.dark {
+  --bg: #1e1f1e;
+  --text: #f1f1f1;
+  --card: #2c2d2c;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.6;
+  transition:0.3s;
+}
+
+h1,h2,h3,h4 { font-family: 'Playfair Display', serif; }
+
+a { text-decoration:none; color:inherit; }
+
+img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.03);
+}
+
+header {
+  background: var(--card);
+  padding: 20px 8%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top:0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+nav { display:flex; align-items:center; }
+
+nav a {
+  margin-left: 20px;
+  font-weight: 500;
+  position:relative;
+}
+
+nav a::after {
+  content:"";
+  position:absolute;
+  width:0;
+  height:2px;
+  bottom:-4px;
+  left:0;
+  background: var(--accent-light);
+  transition: 0.3s;
+}
+
+nav a:hover::after { width:100%; }
+
+.menu-toggle {
+  display:none;
+  font-size:1.5rem;
+  cursor:pointer;
+}
+
+.dark-toggle {
+  margin-left:20px;
+  cursor:pointer;
+  padding:6px 12px;
+  border-radius:20px;
+  border:1px solid var(--accent);
+  font-size:0.9rem;
+}
+
+.btn {
+  display:inline-block;
+  padding:12px 24px;
+  border-radius:30px;
+  font-weight:600;
+  transition:0.3s;
+  margin:5px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color:white;
+}
+
+.btn-primary:hover {
+  background: var(--accent-light);
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  border:2px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color:white;
+}
+
+.hero {
+  background: #e9edc9;
+  padding: 110px 8%;
+  text-align:center;
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero h2 {
+  font-size:3rem;
+  margin-bottom:20px;
+}
+
+section { padding:80px 8%; }
+
+.container { max-width: 1100px; margin:auto; }
+
+.grid {
+  display:grid;
+  gap:30px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+}
+
+.card {
+  background: var(--card);
+  padding:20px;
+  border-radius:20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.1);
+}
+
+.membership {
+  background: #e9edc9;
+  text-align:center;
+}
+
+footer {
+  background: var(--accent);
+  color:white;
+  text-align:center;
+  padding:40px 20px;
+}
+
+input[type="text"] {
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  width:250px;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform: translateY(20px);}
+  to { opacity:1; transform: translateY(0);}
+}
+
+@media (max-width:768px) {
+  nav { display:none; flex-direction: column; gap:10px;}
+  nav.active { display:flex; margin-top:10px;}
+  .menu-toggle { display:block; }
+  header { flex-direction: column; align-items:flex-start; }
+  .hero h2 { font-size:2rem; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>FoxTale Book Shoppe</h1>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <nav id="nav">
+    <a href="#store">Shop</a>
+    <a href="#membership">Membership</a>
+    <a href="#events">Events</a>
+    <a href="#about">About</a>
+    <span class="dark-toggle" onclick="toggleDark()">Dark Mode</span>
+  </nav>
+</header>
+
+<section class="hero">
+  <img src="foxtale-hero.jpg" alt="FoxTale Book Shoppe Image" style="max-width:600px; width:100%; margin-bottom:30px; border-radius:16px;">
+  <h2>Woodstock’s Community Bookstore Since 2007</h2>
+  <p>Discover stories, connect with local authors, and support your neighborhood independent bookstore.</p>
+  <a href="#store" class="btn btn-primary">Shop Books</a>
+  <a href="#membership" class="btn btn-outline">Join Membership</a>
+  <a href="#events" class="btn btn-outline">View Events</a>
+</section>
+
+<section>
+  <div class="container" style="text-align:center;">
+    <h3>Why Shop Local?</h3>
+    <p>Every purchase supports local jobs, authors, and community events. Shopping independent keeps Woodstock unique and strengthens meaningful connections.</p>
+  </div>
+</section>
+
+<section id="store" style="background:white;">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; align-items:center; margin-bottom:40px;">
+      <h3>Online Store</h3>
+      <input type="text" placeholder="Search books...">
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794" alt="Bestseller Book">
+        <h4>Bestsellers</h4>
+        <p>Browse our most popular titles.</p>
+        <a href="#" class="btn btn-primary">View Collection</a>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Local Author Books">
+        <h4>Local Authors</h4>
+        <p>Support writers from our community.</p>
+        <a href="#" class="btn btn-primary">View Collection</a>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d" alt="Signed Books">
+        <h4>Signed Copies</h4>
+        <p>Exclusive signed and limited editions.</p>
+        <a href="#" class="btn btn-primary">View Collection</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="membership" class="membership">
+  <div class="container">
+    <h3>Become a Member</h3>
+    <p>• Monthly discounts<br>• Early access to new releases<br>• Exclusive signed books<br>• Special event perks</p>
+    <br>
+    <a href="#" class="btn btn-primary">Join Now</a>
+  </div>
+</section>
+
+<section id="events" style="background:white;">
+  <div class="container">
+    <h3 style="text-align:center; margin-bottom:40px;">Upcoming Events</h3>
+    <div class="grid grid-3">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c" alt="Author Signing">
+        <h4>Author Signing Night</h4>
+        <p>Meet featured authors and get books signed.</p>
+        <a href="#" class="btn btn-outline">RSVP</a>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353" alt="Book Club">
+        <h4>Local Book Club Meetup</h4>
+        <p>Discuss monthly picks with fellow readers.</p>
+        <a href="#" class="btn btn-outline">RSVP</a>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Storytime">
+        <h4>Children’s Storytime</h4>
+        <p>Fun weekly reading for kids.</p>
+        <a href="#" class="btn btn-outline">RSVP</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="membership">
+  <div class="container" style="text-align:center;">
+    <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da" alt="Bookstore Interior">
+    <h3>Our Story</h3>
+    <p>Founded in 2007, FoxTale Book Shoppe has been a gathering place for readers and writers in Woodstock, Georgia. As we grow online, our mission remains to foster meaningful connections and support our community.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 FoxTale Book Shoppe • Woodstock, Georgia</p>
+  <p>Shop local. Read local. Support community.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("nav").classList.toggle("active");
+}
+
+function toggleDark() {
+  document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
